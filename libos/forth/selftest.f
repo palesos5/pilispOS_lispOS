@@ -1,0 +1,24 @@
+( selftest.f — пакетные тесты LibOS-Forth v0.1 )
+1 2 + .
+5 8 * 40 - .
+7 2 MOD .
+10 3 / .
+: SQUARE DUP * ;
+6 SQUARE .
+: SUM-TO 0 SWAP BEGIN DUP 0 > WHILE OVER + SWAP 1 - REPEAT NIP ;
+10 SUM-TO .
+VARIABLE COUNTER
+COUNTER @ .
+42 COUNTER !
+COUNTER @ .
+3 COUNTER +!
+COUNTER @ .
+: EVEN? 2 MOD 0= ;
+8 EVEN? .
+7 EVEN? .
+: FACT DUP 0= IF DROP 1 ELSE DUP 1 - ... * THEN ;
+0 FACT .
+1 FACT .
+5 FACT .
+." SELFTEST-DONE" CR
+BYE
