@@ -8,10 +8,8 @@
 
 #include <stdint.h>
 
-#define EX_SYS_TTY_WRITE 1   /* ebx=buf, ecx=len -> eax=написано          */
-#define EX_SYS_TTY_READ  2   /* ebx=buf, ecx=max -> eax=прочитано (0=no data) */
-#define EX_SYS_DISK_READ 3   /* ebx=lba, ecx=nsect, edx=buf -> eax=0 ok / err */
-#define EX_SYS_EXIT      4   /* ebx=code                                  */
+/* Номера — общие с include/exo_abi.h (единый экзокос-ABI). */
+#include "exo_abi.h"
 
 /* Kernel-internal реализация (kernel/tty.c, kernel/disk.c). */
 int32_t kernel_syscall(uint32_t n, uint32_t a1, uint32_t a2, uint32_t a3);
