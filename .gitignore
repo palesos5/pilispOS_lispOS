@@ -1,0 +1,11 @@
+*.o
+*.obj
+*.out
+*.bin
+*.elf
+*.iso
+*.img
+*.swp
+*.swo
+*~
+.DS_Store
